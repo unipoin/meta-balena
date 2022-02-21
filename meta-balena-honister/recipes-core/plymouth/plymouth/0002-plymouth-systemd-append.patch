@@ -97,10 +97,10 @@ index 3624550..5793a7a 100644
  Type=forking
  RemainAfterExit=yes
 diff --git a/systemd-units/plymouth-start.service.in b/systemd-units/plymouth-start.service.in
-index 3d00cc6..474667c 100644
+index 830a62d..3ded9a2 100644
 --- a/systemd-units/plymouth-start.service.in
 +++ b/systemd-units/plymouth-start.service.in
-@@ -1,14 +1,16 @@
+@@ -1,15 +1,17 @@
  [Unit]
  Description=Show Plymouth Boot Screen
  DefaultDependencies=no
@@ -112,6 +112,7 @@ index 3d00cc6..474667c 100644
 +Requires=resin-boot.service
  ConditionKernelCommandLine=!plymouth.enable=0
  ConditionVirtualization=!container
+ IgnoreOnIsolate=true
  
  [Service]
 -ExecStart=@PLYMOUTH_DAEMON_DIR@/plymouthd --mode=boot --pid-file=@plymouthruntimedir@/pid --attach-to-session
@@ -120,6 +121,5 @@ index 3d00cc6..474667c 100644
  ExecStartPost=-@PLYMOUTH_CLIENT_DIR@/plymouth show-splash
  Type=forking
  RemainAfterExit=yes
--- 
+--
 2.17.1
-
