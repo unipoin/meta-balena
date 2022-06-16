@@ -12,5 +12,5 @@ ExecStartPre=-@SBINDIR@/ssh_keys_merger
 ExecStart=-/usr/sbin/sshd -i $SSHD_OPTS
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket
-StandardError=syslog
+StandardError=journal
 KillMode=process
