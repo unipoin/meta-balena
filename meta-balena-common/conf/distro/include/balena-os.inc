@@ -152,6 +152,6 @@ BALENA_NONENC_BOOT_LABEL ?= "${@oe.utils.conditional('SIGN_API','','${BALENA_BOO
 BALENA_NONENC_BOOT_MOUNT ?= "/mnt/${@'${BALENA_NONENC_BOOT_LABEL}'.replace('balena-','')}"
 BALENA_USE_LUKS ?= "1"
 
-# This is the docker API version for v20.10
+# This is the docker API version for v28.3.3
 # balena version --format '{{.Server.APIVersion}}'
-BALENA_API_VERSION ?= "1.41"
+BALENA_API_VERSION ?= "1.51"
